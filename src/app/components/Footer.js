@@ -5,6 +5,7 @@ import logo from '../assets/images/logo.png';
 
 export default function Footer() {
   return (
+
     <footer className="bg-white text-black py-8 border-t border-gray-200">
       <div className="container mx-auto px-4 text-center">
         {/* Logo Section */}
@@ -55,6 +56,7 @@ export default function Footer() {
         <div className="border-t from-zinc-300 via-gray-200 to-zinc-300 border-gray-300 pt-4">
           <p className="font-Cinzel text-sm">Copyright © 2024 Wow Unisex Salon. All Rights Reserved.</p>
         </div>
+
       </div>
     </footer>
   );
