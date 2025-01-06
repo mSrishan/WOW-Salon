@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 // import Image from 'C:\Users\win10\Pictures\WOW-Salon\src\app\assets\images';
 
 // Correct usage of an image
-import heroImage from '../../assets/images/path-to-hero-image.jpg';
+import heroImage from '../assets/images/serviceImgs/hero-image.jpg';
 
 export default function Services() {
   return (
