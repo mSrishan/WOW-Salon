@@ -4,34 +4,79 @@ import logo from '../assets/images/logo.png';
 
 export default function Navbar() {
   return (
-    <nav className="bg-gradient-to-r from-zinc-300 via-gray-200 to-zinc-300 shadow-md flex flex-col sm:flex-row justify-between items-center px-6 py-3 md:px-12">
-      {/* Logo Section */}
-      <div className="flex items-center space-x-3">
-        <Image src={logo} alt="WOW Salon" className="w-20 h-20 md:w-24 md:h-24" />
-        <span className="text-2xl md:text-3xl font-Cinzel font-semibold tracking-wide text-gray-700"></span>
-      </div>
+    <>
+      {/* Header Section */}
+      <header className="bg-white text-black text-center py-6">
+        <h1 className="text-3xl font-bold">MAKE AN APPOINTMENT</h1>
+        <p className="text-gray-600 mt-2">Get the look you love, with a click</p>
+      </header>
 
-      {/* Navigation Links */}
-      <ul className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-10 mt-4 sm:mt-0">
-        {['Home', 'About Us', 'Services', 'Gallery', 'Booking'].map((item, index) => (
-          <li key={index}>
-            <Link
-              href={item === 'Home' ? '/' : item === 'About Us' ? '/about' : `/${item.toLowerCase().replace(/ /g, '')}`}
-              className="relative text-lg md:text-xl font-Cinzel font-medium text-gray-700 hover:text-black transition-colors block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-black after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
-            >
-              {item}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {/* Main Section */}
+      <main className="bg-black text-white py-12">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12">
 
-      {/* Book Now Button */}
-      <div className="mt-4 sm:mt-0">
-        <button className="relative group h-12 w-44 md:w-48 overflow-hidden border border-gray-700 text-gray-700 font-Cinzel font-medium rounded-full shadow-md transition-all hover:text-white">
-          <span className="absolute inset-0 bg-gray-700 transition-transform scale-x-0 group-hover:scale-x-100 origin-center duration-300"></span>
-          <span className="relative z-10">Book Now</span>
-        </button>
-      </div>
-    </nav>
+          {/* Contact Info Section */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold">Come Visit Us</h2>
+            <p>
+              <strong>Office</strong>
+              <br />
+              Pambahinna, Belihuloya, Sri Lanka
+            </p>
+            <p>
+              <strong>Contact</strong>
+              <br />
+              (071) 154 - 4071
+              <br />
+              wowsalon@gmail.com
+            </p>
+            <p>
+              <strong>Working Hours</strong>
+              <br />
+              Mon to Fri 8am - 6pm
+              <br />
+              Sat 9am - 7pm
+              <br />
+              Sun 9am - 3pm
+            </p>
+          </div>
+
+          {/* Appointment Form Section */}
+          <div className="bg-gray-800 p-6 rounded-md shadow-md">
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full p-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="w-full p-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full p-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              />
+              <textarea
+                placeholder="Your message"
+                rows="4"
+                className="w-full p-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full bg-yellow-500 text-black font-bold py-3 rounded-md hover:bg-yellow-600"
+              >
+                BOOK APPOINTMENT
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </main>
+    </>
   );
 }

@@ -2,12 +2,14 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+// Remove the incorrect import
+// import Image from 'C:\Users\win10\Pictures\WOW-Salon\src\app\assets\images';
 
-import Image from 'C:\Users\win10\Pictures\WOW-Salon\src\app\assets\images';
+// Correct usage of an image
+import heroImage from '../assets/images/serviceImgs/hero-image.jpg';
 
 export default function Services() {
   return (
-
     <div className="bg-gray-100 text-gray-800">
       {/* Hero Section */}
       <section className="bg-white py-12 text-center">
@@ -17,11 +19,9 @@ export default function Services() {
             At Wow Unisex Salon, we offer a wide range of services designed to cater to all your hair, beauty, and grooming needs. Whether you're preparing for a special occasion or simply in need of a refreshing makeover, our expert team ensures you leave feeling your absolute best. From classic haircuts to advanced treatments, our services are tailored for both men and women, giving everyone the chance to experience the wow factor.
           </p>
           <div className="mt-6">
-            <Image
-              src="/path-to-hero-image.jpg"
+            <img
+              src={heroImage}
               alt="Hair washing service"
-              width={600}
-              height={400}
               className="rounded-lg mx-auto"
             />
           </div>
@@ -134,6 +134,5 @@ export default function Services() {
         </div>
       </section>
     </div>
-
   );
 }
