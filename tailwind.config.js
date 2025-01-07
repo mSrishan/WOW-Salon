@@ -12,6 +12,9 @@ module.exports = {
       colors: {
         background: "var(--background)", // Custom background color
         foreground: "var(--foreground)", // Custom foreground color
+        lightGray: '#212121',
+        yellow: '#E9C664',
+       
       },
       fontFamily: {
         cinzel: ['Cinzel', 'serif'], // Add Cinzel font globally
