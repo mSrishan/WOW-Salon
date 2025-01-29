@@ -36,9 +36,12 @@ export default function Home() {
               refresh your everyday style or transform your appearance, our team of skilled
               professionals is here to bring your vision to life.
             </p>
-            <button className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 mt-7">
+            <a href='/about'>
+              <button className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 mt-7">
               About Us
             </button>
+            </a>
+            
           </div>
           <div className="w-full md:w-1/4 flex justify-center">
             <Image
@@ -83,9 +86,11 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-12">
+          <a href='/services'>
           <button className="bg-gradient-to-r from-black to-gray-800 text-white px-8 py-3 rounded-md text-lg font-semibold shadow-md hover:from-gray-800 hover:to-black transition duration-300">
             Explore Our Services
-          </button>
+            </button>
+            </a>
         </div>
       </div>
 
@@ -119,35 +124,63 @@ export default function Home() {
           </div>
         </div>
         <div className="text-center mt-[8%]">
+          <a href='/gallery'>
           <button className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 mt-7">
             Gallery
-          </button>
+            </button>
+            </a>
         </div>
       </div>
 
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-        <div className="w-full text-center py-8 bg-gray-300">
-          <h1 className="text-2xl font-semibold tracking-wider text-black">
-            A 3D Journey Through Style and Elegance
-          </h1>
-        </div>
-
-        <div className="w-full max-w-4xl h-64 bg-gray-600 mt-8 mb-8 flex items-center justify-center">
-          <video
-            className="w-full h-full object-cover"
-            controls
-            src="/assets/videos/video1.mp4" // Updated to use the public folder
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <div className="w-full text-center py-4 bg-gray-300">
-          <p className="text-lg font-medium text-black">
-            Start your 3D journey now and see how your dream salon experience comes to life!
-          </p>
+{/* Customer Feedback Section */} 
+<div className="bg-gradient-to-b from-gray-50 to-gray-100 py-20">
+  <div className="max-w-7xl mx-auto px-4">
+    <h1 className="text-4xl font-extrabold text-gray-800 text-center mb-12">
+      What Our Clients Say
+    </h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {/* Feedback Card 1 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg transition-all hover:shadow-2xl hover:scale-105 transform duration-300">
+        <p className="text-gray-700 text-lg italic">
+          "Amazing service! The staff were friendly, and I left feeling like a new person. Highly recommend Wow Unisex Salon!"
+        </p>
+        <div className="mt-6 flex items-center">
+          <div className="bg-black w-12 h-12 rounded-full flex justify-center items-center">
+            <span className="text-white font-semibold">SJ</span>
+          </div>
+          <p className="ml-4 text-sm font-semibold text-gray-600">- Sarah J.</p>
         </div>
       </div>
+
+      {/* Feedback Card 2 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg transition-all hover:shadow-2xl hover:scale-105 transform duration-300">
+        <p className="text-gray-700 text-lg italic">
+          "Fantastic experience! The team truly knows how to make clients feel special and beautiful."
+        </p>
+        <div className="mt-6 flex items-center">
+          <div className="bg-black w-12 h-12 rounded-full flex justify-center items-center">
+            <span className="text-white font-semibold">JM</span>
+          </div>
+          <p className="ml-4 text-sm font-semibold text-gray-600">- James M.</p>
+        </div>
+      </div>
+
+      {/* Feedback Card 3 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg transition-all hover:shadow-2xl hover:scale-105 transform duration-300">
+        <p className="text-gray-700 text-lg italic">
+          "Absolutely loved my haircut and styling. The atmosphere and professionalism were top-notch!"
+        </p>
+        <div className="mt-6 flex items-center">
+          <div className="bg-black w-12 h-12 rounded-full flex justify-center items-center">
+            <span className="text-white font-semibold">ER</span>
+          </div>
+          <p className="ml-4 text-sm font-semibold text-gray-600">- Emily R.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </>
   );
 }
