@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const AppointmentForm = () => {
-  // State for form data
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,10 +22,6 @@ const AppointmentForm = () => {
   };
 
   
-
-  
-
-  // Handle form submission
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
