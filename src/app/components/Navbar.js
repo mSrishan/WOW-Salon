@@ -38,7 +38,7 @@ export default function Navbar() {
 
         {/* Navigation Links (Desktop View) */}
         <ul className="hidden sm:flex items-center space-x-8">
-          {['Home', 'About Us', 'Services', 'Gallery', 'Booking'].map((item, index) => (
+          {['Home', 'About Us', 'Services', 'Gallery', 'Contact US'].map((item, index) => (
             <li key={index}>
               <Link
                 href={
@@ -58,10 +58,12 @@ export default function Navbar() {
 
         {/* Book Now Button (Desktop View) */}
         <div className="hidden sm:block">
-          <button className="relative group h-10 sm:h-12 w-36 sm:w-44 md:w-48 overflow-hidden border border-gray-700 text-gray-700 font-Cinzel font-medium rounded-full shadow-md transition-all hover:text-white">
-            <span className="absolute inset-0 bg-gray-700 transition-transform scale-x-0 group-hover:scale-x-100 origin-center duration-300"></span>
-            <span className="relative z-10">Book Now</span>
-          </button>
+          <Link href="/booking">
+            <button className="relative group h-10 sm:h-12 w-36 sm:w-44 md:w-48 overflow-hidden border border-gray-700 text-gray-700 font-Cinzel font-medium rounded-full shadow-md transition-all hover:text-white">
+              <span className="absolute inset-0 bg-gray-700 transition-transform scale-x-0 group-hover:scale-x-100 origin-center duration-300"></span>
+              <span className="relative z-10">Book Now</span>
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -89,10 +91,12 @@ export default function Navbar() {
           </ul>
 
           <div className="mt-3 flex justify-center">
-            <button className="relative group h-10 sm:h-12 w-36 sm:w-44 md:w-48 overflow-hidden border border-gray-700 text-gray-700 font-Cinzel font-medium rounded-full shadow-md transition-all hover:text-white">
-              <span className="absolute inset-0 bg-gray-700 transition-transform scale-x-0 group-hover:scale-x-100 origin-center duration-300"></span>
-              <span className="relative z-10">Book Now</span>
-            </button>
+            <Link href="/booking">
+              <button className="relative group h-10 sm:h-12 w-36 sm:w-44 md:w-48 overflow-hidden border border-gray-700 text-gray-700 font-Cinzel font-medium rounded-full shadow-md transition-all hover:text-white">
+                <span className="absolute inset-0 bg-gray-700 transition-transform scale-x-0 group-hover:scale-x-100 origin-center duration-300"></span>
+                <span className="relative z-10">Book Now</span>
+              </button>
+            </Link>
           </div>
         </div>
       )}
