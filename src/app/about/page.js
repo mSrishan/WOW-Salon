@@ -1,8 +1,11 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Image from 'next/image';
-import ab1 from '../assets/images/ab1.png';
+
+
 import ab2 from '../assets/images/ab2.jpg';
+import ab1 from '../assets/images/ab1.png'
+
 
 export default function About() {
   return (
