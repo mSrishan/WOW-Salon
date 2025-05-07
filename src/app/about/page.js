@@ -10,7 +10,7 @@ import ab1 from '../assets/images/ab1.png'
 export default function About() {
   return (
     <>
-      <div className="py-8 bg-gray-100">
+      <div className="py-8 bg-gray-100 py-[60px] px-[30px]">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold text-gray-800 font-cinzel">
             Welcome to Wow Unisex Salon – Where Style Meets Perfection
@@ -32,7 +32,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="py-8 bg-zinc-300">
+      <div className="py-8 bg-zinc-300 px-[30px]">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold text-gray-800">Why Choose Us</h1>
           <div className="flex flex-col md:flex-row-reverse items-center gap-6 mt-6">
@@ -52,10 +52,10 @@ export default function About() {
         </div>
       </div>
 
-      <div className="py-8 bg-gray-100">
+      <div className="py-8 bg-gray-100 ">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold text-gray-800">Our Philosophy</h1>
-          <p className="mt-4 text-gray-600 text-justify">
+          <p className="mt-4 text-gray-600 text-justify px-[30px]">
             At Wow Unisex Salon, we believe that beauty is for everyone. Our mission is simple: to provide top-notch hair, beauty, and grooming services in an environment that’s welcoming, luxurious, and truly unisex. We believe every client deserves personalized attention and treatments that not only enhance their appearance but also uplift their spirit.
           </p>
         </div>
