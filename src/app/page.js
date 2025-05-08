@@ -1,32 +1,86 @@
 "use client";
 
-import Image from 'next/image';
-import hero from './assets/images/hero.png';
-import logo from './assets/images/logo.png';
-import home1 from './assets/images/home1.png';
-import home2 from './assets/images/home2.png';
-import home3 from './assets/images/home3.png';
-import homeg1 from './assets/images/homeg1.png';
-import homeg2 from './assets/images/homeg2.png';
-import homeg3 from './assets/images/homeg3.png';
-import homeg4 from './assets/images/homeg4.png';
-import homeg5 from './assets/images/homeg5.png';
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import hero from "./assets/images/hero.png";
+import logo from "./assets/images/logo.png";
+import home1 from "./assets/images/home1.png";
+import home2 from "./assets/images/home2.png";
+import home3 from "./assets/images/home3.png";
+import homeg1 from "./assets/images/homeg1.png";
+import homeg2 from "./assets/images/homeg2.png";
+import homeg3 from "./assets/images/homeg3.png";
+import homeg4 from "./assets/images/homeg4.png";
+import homeg5 from "./assets/images/homeg5.png";
+
+// Mobile Header Component for mobile view
+function MobileHeader() {
+  return (
+    <section className="block sm:hidden bg-gray-800 text-white py-10 mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-3xl font-extrabold tracking-tight mb-3">
+          Wow Unisex Salon
+        </h1>
+        <p className="text-base font-medium text-gray-300 mb-6 max-w-md mx-auto">
+          Transform your look with our expert styling and personalized care.
+        </p>
+        <a
+          href="/booking"
+          className="inline-block bg-white text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition transform hover:scale-105"
+        >
+          Book Your Appointment
+        </a>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
+  // Carousel settings for the gallery
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative w-full h-[60vh]">
+      {/* Hero Section - Hidden on mobile with top margin */}
+      <section className="hidden sm:block mt-16 relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh]">
         <Image
           src={hero}
           alt="Salon interior"
           fill
-          className="object-cover"
+          className="object-cover object-center w-full h-full"
           priority
           sizes="100vw"
         />
-      
       </section>
+
+      {/* Mobile Header - Visible on mobile */}
+      <MobileHeader />
 
       {/* About Section */}
       <section className="py-12 sm:py-16 bg-white">
@@ -39,7 +93,7 @@ export default function Home() {
                   alt="WOW Salon"
                   width={80}
                   height={80}
-                  className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
+                  className="hidden sm:block w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
                 />
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800">
                   About Us
@@ -49,10 +103,11 @@ export default function Home() {
                 Unveil Your Unique Style
               </h3>
               <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-center lg:text-left">
-                At <span className="font-semibold">Wow Unisex Salon</span>, we believe beauty is for
-                everyone. Our welcoming space offers tailored services for all genders, from vibrant
-                haircuts to stunning beauty treatments. Let our skilled professionals bring your vision
-                to life.
+                At <span className="font-semibold">Wow Unisex Salon</span>, we
+                believe beauty is for everyone. Our welcoming space offers
+                tailored services for all genders, from vibrant haircuts to
+                stunning beauty treatments. Let our skilled professionals bring
+                your vision to life.
               </p>
               <div className="text-center lg:text-left mt-6">
                 <a
@@ -83,23 +138,40 @@ export default function Home() {
             Our Services
             <span className="block w-20 h-1 bg-gray-900 mx-auto mt-2"></span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="space-y-6 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0">
             {[
-              { src: home2, title: "Hair Styling" },
-              { src: home3, title: "Facial Treatments" },
+              {
+                src: home2,
+                title: "Hair Styling",
+                description:
+                  "Transform your look with our expert cuts, colors, and styling.",
+              },
+              {
+                src: home3,
+                title: "Facial Treatments",
+                description:
+                  "Rejuvenate your skin with our customized facial therapies.",
+              },
             ].map((service, index) => (
               <div
                 key={index}
-                className="group relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 sm:h-64 sm:shadow-lg sm:hover:shadow-xl"
               >
-                <Image
-                  src={service.src}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <p className="text-white text-lg sm:text-xl font-semibold">{service.title}</p>
+                <div className="relative h-72 sm:h-full rounded-t-xl sm:rounded-xl overflow-hidden">
+                  <Image
+                    src={service.src}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4 sm:bg-black sm:bg-opacity-40 sm:opacity-0 sm:group-hover:opacity-100 sm:transition-opacity sm:duration-300 sm:items-center sm:justify-center">
+                    <p className="text-white text-lg font-semibold sm:text-xl">
+                      {service.title}
+                    </p>
+                  </div>
+                </div>
+                <div className="p-4 sm:hidden">
+                  <p className="text-gray-600 text-sm">{service.description}</p>
                 </div>
               </div>
             ))}
@@ -122,35 +194,7 @@ export default function Home() {
             Our Gallery
             <span className="block w-20 h-1 bg-gray-900 mx-auto mt-2"></span>
           </h2>
-          {/* Mobile Gallery (Horizontal Scrollable Carousel) */}
-          <div className="block sm:hidden overflow-x-auto whitespace-nowrap pb-4 -mx-4 px-4">
-            <div className="inline-flex space-x-4">
-              {[
-                { src: homeg1, alt: "Gallery Image 1" },
-                { src: homeg2, alt: "Gallery Image 2" },
-                { src: homeg3, alt: "Gallery Image 3" },
-                { src: homeg4, alt: "Gallery Image 4" },
-                { src: homeg5, alt: "Gallery Image 5" },
-              ].map((image, index) => (
-                <div
-                  key={index}
-                  className="inline-block w-64 h-80 relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-white text-sm font-semibold">{image.alt}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Desktop Gallery (Grid Layout) */}
-          <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <Slider {...carouselSettings}>
             {[
               { src: homeg1, alt: "Gallery Image 1" },
               { src: homeg2, alt: "Gallery Image 2" },
@@ -158,19 +202,23 @@ export default function Home() {
               { src: homeg4, alt: "Gallery Image 4" },
               { src: homeg5, alt: "Gallery Image 5" },
             ].map((image, index) => (
-              <div
-                key={index}
-                className="relative h-48 lg:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                />
+              <div key={index} className="px-2">
+                <div className="relative h-80 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p className="text-white text-sm font-semibold">
+                      {image.alt}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
-          </div>
+          </Slider>
           <div className="text-center mt-8">
             <a
               href="/gallery"
@@ -213,7 +261,9 @@ export default function Home() {
               >
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-500 text-lg">★</span>
+                    <span key={i} className="text-yellow-500 text-lg">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-600 text-sm sm:text-base italic mb-6">
