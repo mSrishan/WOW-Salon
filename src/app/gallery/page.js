@@ -19,8 +19,9 @@ export default function Gallery() {
 
       {/* Main Content */}
       <main className="container mx-auto px-6 py-12">
-        <section className="text-center">
-        <h1 className="text-3xl font-bold text-black mb-4"
+        <section className="text-center pt-20">
+        
+        <h1 className="text-3xl font-bold text-black mb-"
               style={{ fontFamily: 'Cinzel, serif' }} >
               GALLERY – DISCOVER THE WOW TRANSFORMATION
         </h1>
