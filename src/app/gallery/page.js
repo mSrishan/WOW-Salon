@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Image from 'next/image';
 import wowlogo from '@/app/assets/images/wowlogo.png';
 import col1 from '@/app/assets/images/col1.png';
@@ -8,7 +10,10 @@ import hstylebrown from '@/app/assets/images/hstylebrown.png';
 import hstyle2 from '@/app/assets/images/hstyle2.png';
 import bluehair from '@/app/assets/images/bluehair.png';
 
+
+
 export default function Gallery() {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="min-h-screen bg-gray-100">
 
@@ -26,10 +31,11 @@ export default function Gallery() {
               GALLERY – DISCOVER THE WOW TRANSFORMATION
         </h1>
         <br></br>
-            <p className="text-black mb-8 px-10 text-justify">
+        <div className="flex justify-center">
+            <p className="text-black mb-8 px-10 text-gray-600">
                   Step into the world of beauty, style, and grooming through our Wow Unisex Salon Gallery! Explore the transformations we create and get inspired for your next look. From bold hair makeovers to flawless skin treatments, our gallery showcases the artistry, skill, and passion we put into every service.
             </p>
-
+        </div>
         </section>
 
 
@@ -63,7 +69,7 @@ export default function Gallery() {
                       className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"/>
                     
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
-                      <p className="text-white text-lg font-semibold">Haircut 3</p>
+                      
                     </div>
                   </div>
 
@@ -76,7 +82,7 @@ export default function Gallery() {
                       height={400}
                       className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"/>
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
-                      <p className="text-white text-lg font-semibold">Haircut 1</p>
+                      
                     </div>
                   </div>
 
@@ -89,7 +95,7 @@ export default function Gallery() {
                       height={400}
                       className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"/>
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
-                      <p className="text-white text-lg font-semibold">Haircut 2</p>
+                      
                     </div>
                   </div>
                 </div>
@@ -124,7 +130,7 @@ export default function Gallery() {
                       height={400}
                       className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"/>
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
-                      <p className="text-white text-lg font-semibold">Haircut 3</p>
+                      
                     </div>
                   </div>
                   <div className="relative group">
@@ -136,7 +142,7 @@ export default function Gallery() {
                       className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
-                      <p className="text-white text-lg font-semibold">Haircut 1</p>
+                      
                     </div>
                   </div>
                   <div className="relative group">
@@ -148,7 +154,7 @@ export default function Gallery() {
                       className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
-                      <p className="text-white text-lg font-semibold">Haircut 2</p>
+                      
                     </div>
                   </div>
                 </div>
@@ -171,49 +177,79 @@ export default function Gallery() {
             </div>
 
 
-            <p className="text-black mb-8 px-10 text-justify">
-                    Want to see the process in action? Watch our exclusive videos that take you behind the scenes of our most popular services. From the initial consultation to the final reveal, experience the Wow journey with us.
-            </p>
+        <div className="flex justify-center">
+           <p className="text-black mb-8 px-10 text-gray-600">
+                Want to see the process in action? Watch our exclusive videos that take you behind the scenes of our most popular services. From the initial consultation to the final reveal, experience the Wow journey with us.
+          </p>
+       </div>
+       
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
-                    <video 
-                    className="w-full h-64 bg-gray-300 rounded-lg" 
-                    controls 
-                    >
-                    <source src="https://github.com/mSrishan/WOW-Salon/blob/thanushi/src/app/assets/images/video3.mp4" type="video/mp4" />
-                    
-                    </video>
 
-                    
 
+          <div className="w-full h-64 rounded-lg overflow-hidden transition-all duration-300">
+                  <video
+                    className={`w-full h-64 rounded-lg transition-all duration-300 ${
+                      isHovered ? "shadow-xl scale-105" : "shadow-none scale-100"
+                    }`}
+                    controls
+                    onMouseEnter={(e) => {
+                      e.target.play();
+                      setIsHovered(true);
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.pause();
+                      setIsHovered(false);
+                    }}
+                  >
+                    <source src="/video/video3.mp4" type="video/mp4" />
+                  </video>
+            </div>
+
+
+
+
+            <div className="w-full h-64 rounded-lg overflow-hidden transition-all duration-300">
+                  <video
+                    className={`w-full h-64 rounded-lg transition-all duration-300 ${
+                      isHovered ? "shadow-xl scale-105" : "shadow-none scale-100"
+                    }`}
+                    controls
+                    onMouseEnter={(e) => {
+                      e.target.play();
+                      setIsHovered(true);
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.pause();
+                      setIsHovered(false);
+                    }}
+                  >
+                    <source src="/video/video1.mp4" type="video/mp4" />
+                  </video>
+            </div>
+
+
+
+
+            <div className="w-full h-64 rounded-lg overflow-hidden transition-all duration-300">
+                  <video
+                    className={`w-full h-64 rounded-lg transition-all duration-300 ${
+                      isHovered ? "shadow-xl scale-105" : "shadow-none scale-100"
+                    }`}
+                    controls
+                    onMouseEnter={(e) => {
+                      e.target.play();
+                      setIsHovered(true);
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.pause();
+                      setIsHovered(false);
+                    }}
+                  >
+                    <source src="/video/video2.mp4" type="video/mp4" />
+                  </video>
+            </div>
             
-                    <video 
-                    className="w-full h-64 bg-gray-300 rounded-lg" 
-                    autoPlay 
-                    muted 
-                    loop 
-                    playsInline
-                    >
-                    <source src="https://www.facebook.com/share/r/15ADZ8kGpg/" type="video/mp4" />
-                    Your browser does not support the video tag.
-                    </video>
-
-
-                    <div className="w-full h-64 bg-gray-300 rounded-lg">
-
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.facebook.com/share/r/15ADZ8kGpg/"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-
-
-
-            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
           </div>
         </section>
       </main>
@@ -224,3 +260,4 @@ export default function Gallery() {
     </div>
   );
 }
+
