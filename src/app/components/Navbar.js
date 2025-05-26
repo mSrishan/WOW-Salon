@@ -1,10 +1,12 @@
 "use client";
 
+
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../assets/images/logo.png";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,6 +40,7 @@ export default function Navbar() {
 
         {/* Navigation Links (Desktop View) */}
         <ul className="hidden sm:flex items-center space-x-8">
+
           {["Home", "About Us", "Services", "Gallery", "Contact US"].map(
             (item, index) => (
               <li key={index}>
@@ -56,6 +59,7 @@ export default function Navbar() {
               </li>
             )
           )}
+
         </ul>
 
         {/* Book Now Button (Desktop View) */}
@@ -73,6 +77,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="sm:hidden bg-zinc-300 py-3 shadow-inner">
           <ul className="flex flex-col items-center space-y-3">
+
             {["Home", "About Us", "Services", "Gallery", "Contact US"].map(
               (item, index) => (
                 <li key={index}>
@@ -93,6 +98,7 @@ export default function Navbar() {
               )
             )}
           </ul>
+
         </div>
       )}
     </nav>
