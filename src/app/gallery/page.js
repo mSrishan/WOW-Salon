@@ -16,14 +16,9 @@ export default function Gallery() {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="min-h-screen bg-gray-100">
-
-     
-
-
-
-
       {/* Main Content */}
       <main className="container mx-auto px-6 py-12">
+
         <section className="text-center pt-20">
         
         <h1 className="text-3xl font-bold text-black mb-"
@@ -36,29 +31,24 @@ export default function Gallery() {
                   Step into the world of beauty, style, and grooming through our Wow Unisex Salon Gallery! Explore the transformations we create and get inspired for your next look. From bold hair makeovers to flawless skin treatments, our gallery showcases the artistry, skill, and passion we put into every service.
             </p>
         </div>
+
         </section>
-
-
-
-
-
 
         {/* Services in Action */}
         <section className="mb-12">
-        <h2 className="text-2xl font-bold  text-center text-black mb-4"
-        style={{ fontFamily: 'Cinzel, serif' }} >Our Services in Action</h2> <br></br><br></br>
-          
-          
+          <h2 className="text-2xl font-bold text-center text-black mb-4" style={{ fontFamily: 'Cinzel, serif' }}>
+            Our Services in Action
+          </h2>
           <div className="flex items-center justify-center my-4">
-                <div className="w-10 border-t border-black"></div>
-                <h3 className="mx-4 text-black text-xl text-center uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
-                    Haircuts & Styling
-                </h3>
-                <div className="w-10 border-t border-black"></div>
+            <div className="w-10 border-t border-black"></div>
+            <h3 className="mx-4 text-black text-xl text-center uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+              Haircuts & Styling
+            </h3>
+            <div className="w-10 border-t border-black"></div>
           </div>
 
-
           <div className="flex justify-center items-center">
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="relative group">
                     <Image
@@ -98,29 +88,39 @@ export default function Gallery() {
                       
                     </div>
                   </div>
+
                 </div>
               </div>
 
+              <div className="relative group">
+                <Image
+                  src={hstyle1}
+                  alt="Haircut 2"
+                  width={400}
+                  height={400}
+                  layout="intrinsic"
+                  className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
+                  <p className="text-white text-lg font-semibold">Haircut 2</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-<br></br>
-
-
-
-
 
         {/* Color Creations */}
         <section className="mb-12">
-          
           <div className="flex items-center justify-center my-8">
             <div className="w-10 border-t border-black"></div>
-            <h3 className="mx-4 text-black text-xl text-center uppercase " style={{ fontFamily: 'Cinzel, serif' }}>
-                  Color Creations
+            <h3 className="mx-4 text-black text-xl text-center uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+              Color Creations
             </h3>
             <div className="w-10 border-t border-black"></div>
           </div>
 
-            
           <div className="flex justify-center items-center">
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="relative group">
                     <Image
@@ -157,24 +157,50 @@ export default function Gallery() {
                       
                     </div>
                   </div>
+
                 </div>
-              </div>   
+              </div>
+
+              <div className="relative group">
+                <Image
+                  src={hstyle2}
+                  alt="Haircut 1"
+                  width={400}
+                  height={400}
+                  layout="intrinsic"
+                  className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
+                  <p className="text-white text-lg font-semibold">Color 2</p>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <Image
+                  src={color}
+                  alt="Haircut 2"
+                  width={400}
+                  height={400}
+                  layout="intrinsic"
+                  className="rounded-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg flex items-center justify-center">
+                  <p className="text-white text-lg font-semibold">Color 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-
-
-
-
 
         {/* The WOW Experience */}
         <section>
-         
           <div className="flex items-center justify-center my-8">
             <div className="w-10 border-t border-black"></div>
-            <h3 className="mx-4 text-black text-xl text-center uppercase " style={{ fontFamily: 'Cinzel, serif' }}>
-            The WOW Experience
+            <h3 className="mx-4 text-black text-xl text-center uppercase" style={{ fontFamily: 'Cinzel, serif' }}>
+              The WOW Experience
             </h3>
             <div className="w-10 border-t border-black"></div>
-            </div>
+          </div>
 
 
         <div className="flex justify-center">
@@ -250,13 +276,10 @@ export default function Gallery() {
                   </video>
             </div>
             
+
           </div>
         </section>
       </main>
-
-
-
-
     </div>
   );
 }
