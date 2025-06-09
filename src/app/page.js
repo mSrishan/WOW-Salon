@@ -9,11 +9,11 @@ import logo from "./assets/images/logo.png";
 import home1 from "./assets/images/home1.png";
 import home2 from "./assets/images/home2.png";
 import home3 from "./assets/images/home3.png";
-import homeg1 from "./assets/images/homeg1.png";
-import homeg2 from "./assets/images/homeg2.png";
-import homeg3 from "./assets/images/homeg3.png";
-import homeg4 from "./assets/images/homeg4.png";
-import homeg5 from "./assets/images/homeg5.png";
+import homeg1 from "./assets/images/5.png";
+import homeg2 from "./assets/images/bluehair.png";
+import homeg3 from "./assets/images/red.png";
+import homeg4 from "./assets/images/color.png";
+import homeg5 from "./assets/images/brush.png";
 
 // Mobile Header Component for mobile view
 function MobileHeader() {
@@ -187,48 +187,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
-            Our Gallery
-            <span className="block w-20 h-1 bg-gray-900 mx-auto mt-2"></span>
-          </h2>
-          <Slider {...carouselSettings}>
-            {[
-              { src: homeg1, alt: "Gallery Image 1" },
-              { src: homeg2, alt: "Gallery Image 2" },
-              { src: homeg3, alt: "Gallery Image 3" },
-              { src: homeg4, alt: "Gallery Image 4" },
-              { src: homeg5, alt: "Gallery Image 5" },
-            ].map((image, index) => (
-              <div key={index} className="px-2">
-                <div className="relative h-80 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-white text-sm font-semibold">
-                      {image.alt}
-                    </p>
-                  </div>
-                </div>
+ 
+{/* Gallery Section */}
+<section className="py-12 sm:py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
+      Our Gallery
+      <span className="block w-20 h-1 bg-gray-900 mx-auto mt-2"></span>
+    </h2>
+    <Slider {...carouselSettings}>
+      {[
+        { src: homeg1, alt: "Gallery Image 1" },
+        { src: homeg2, alt: "Gallery Image 2" },
+        { src: homeg3, alt: "Gallery Image 3" },
+        { src: homeg4, alt: "Gallery Image 4" },
+        { src: homeg5, alt: "Gallery Image 5" },
+      ].map((image, index) => (
+        <div key={index} className="px-3">
+          <div className="rounded-xl border-4 border-gray-200 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.03] bg-white">
+            <div className="relative aspect-w-4 aspect-h-5 w-full">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-sm font-semibold">
+                  {image.alt}
+                </p>
               </div>
-            ))}
-          </Slider>
-          <div className="text-center mt-8">
-            <a
-              href="/gallery"
-              className="inline-block bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition transform hover:scale-105"
-            >
-              View Full Gallery
-            </a>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </Slider>
+    <div className="text-center mt-8">
+      <a
+        href="/gallery"
+        className="inline-block bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition transform hover:scale-105"
+      >
+        View Full Gallery
+      </a>
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials Section */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-200 to-gray-300">
