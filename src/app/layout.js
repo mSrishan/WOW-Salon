@@ -3,6 +3,10 @@ import './globals.css'; // Import your global styles
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
+export const metadata = {
+  title: 'Wow Salon',
+ 
+};
 
 
 export default function Layout({ children }) {
