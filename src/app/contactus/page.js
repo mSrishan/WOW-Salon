@@ -66,14 +66,14 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6">
-      <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-lg">
-        <h1 className="text-4xl font-bold text-black mb-6 text-center">
-          Get in Touch
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-950 p-6">
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 w-full max-w-lg border border-white/20">
+        <h1 className="text-4xl font-extrabold text-white mb-8 text-center tracking-tight">
+          Connect With Us
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-black mb-2">
+            <label className="block text-sm font-medium text-white/80 mb-2">
               Your Name
             </label>
             <input
@@ -82,12 +82,12 @@ export default function ContactUs() {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full p-4 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black placeholder-gray-500"
+              className="w-full p-4 bg-white/5 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-white placeholder-white/50 transition-all duration-300"
               placeholder="Enter Your Name"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-black mb-2">
+            <label className="block text-sm font-medium text-white/80 mb-2">
               Your Email
             </label>
             <input
@@ -96,12 +96,12 @@ export default function ContactUs() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full p-4 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black placeholder-gray-500"
-              placeholder="Enter your Email Address"
+              className="w-full p-4 bg-white/5 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-white placeholder-white/50 transition-all duration-300"
+              placeholder="Enter Your Email Address"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-black mb-2">
+            <label className="block text-sm font-medium text-white/80 mb-2">
               Your Message
             </label>
             <textarea
@@ -109,7 +109,7 @@ export default function ContactUs() {
               value={form.message}
               onChange={handleChange}
               required
-              className="w-full p-4 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black placeholder-gray-500"
+              className="w-full p-4 bg-white/5 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-white placeholder-white/50 transition-all duration-300"
               rows="5"
               placeholder="Write your message here"
             />
@@ -117,11 +117,11 @@ export default function ContactUs() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gray-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-600 active:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-black text-white py-3 px-6 rounded-xl font-semibold hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? (              
+            {loading ? (
               <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+                <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-white"></div>
               </div>
             ) : (
               'Send Message'
